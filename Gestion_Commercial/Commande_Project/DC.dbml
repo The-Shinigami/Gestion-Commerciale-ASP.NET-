@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="maBase" Class="DCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\maBase.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="maBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Article" Member="Article">
+    <Type Name="Article">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="categorieId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Article_Article_Cmd" Member="Article_Cmd" ThisKey="Id" OtherKey="articleId" Type="Article_Cmd" />
+      <Association Name="Categorie_Article" Member="Categorie" ThisKey="categorieId" OtherKey="Id" Type="Categorie" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Article_Cmd" Member="Article_Cmd">
+    <Type Name="Article_Cmd">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="quantite" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cmdId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="articleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Article_Article_Cmd" Member="Article" ThisKey="articleId" OtherKey="Id" Type="Article" IsForeignKey="true" />
+      <Association Name="Commande_Article_Cmd" Member="Commande" ThisKey="cmdId" OtherKey="Id" Type="Commande" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categorie" Member="Categorie">
+    <Type Name="Categorie">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="categorie" Member="categorie1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Categorie_Article" Member="Article" ThisKey="Id" OtherKey="categorieId" Type="Article" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Client" Member="Client">
+    <Type Name="Client">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Client_Commande" Member="Commande" ThisKey="Id" OtherKey="ClientId" Type="Commande" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Commande" Member="Commande">
+    <Type Name="Commande">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="num" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="date" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Commande_Article_Cmd" Member="Article_Cmd" ThisKey="Id" OtherKey="cmdId" Type="Article_Cmd" />
+      <Association Name="Client_Commande" Member="Client" ThisKey="ClientId" OtherKey="Id" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admin">
+    <Type Name="Admin">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="login" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

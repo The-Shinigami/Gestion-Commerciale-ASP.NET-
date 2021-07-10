@@ -1,0 +1,179 @@
+﻿body {
+    background-image: url('/images/pattern.png') repeat;
+}
+
+.font {
+    margin-top: -39px;
+    background-color: Gray;
+    width: 629px;
+    height: 180px;
+    line-height: 60px;
+}
+
+.strip {
+    text-decoration: none;
+    word-spacing: 5px;
+    color: White;
+}
+
+.topHeader {
+    line-height: normal;
+    background-color: red;
+    display: inline-block;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: medium;
+    width: 102px;
+}
+
+.main {
+    background: url("images/pattern.png") repeat;
+    height: 492px;
+}
+
+.Instockdiv {
+    width: 60%;
+    height: auto;
+    background-color: White;
+    border-radius: 10px;
+}
+
+.instocktable1 {
+    position: absolute;
+    float: left;
+    width: 40%;
+    height: 200px;
+    color: Black;
+    margin-left: 10px;
+}
+
+.instocktable2 {
+    float: right;
+    width: 25%;
+    height: 200px;
+    color: Black;
+    margin-left: 10px;
+}
+
+.buttondiv {
+    margin-top: 220px;
+    width: 55%;
+    height: 31px;
+    font-family: Times New Roman Baltic;
+}
+
+.Instockbutton {
+    width: 15%;
+    height: 100%;
+}
+
+.griddiv1 {
+    color: Black;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.outstockdiv {
+    width: 60%;
+    height: 500px;
+    background-color: White;
+}
+
+.outdiv1 {
+    padding-left: 10px;
+    width: 50%;
+    height: 100px;
+    color: Black;
+    float: left;
+    text-align: center;
+}
+
+.outdiv2 {
+    margin-top: -20px;
+    float: right;
+    width: 40%;
+    height: 200px;
+    text-align: center;
+    color: Black;
+}
+
+.griddiv2 {
+    width: 100%;
+    height: auto;
+    color: Black;
+    margin-top: 250px;
+}
+
+.currentdiv {
+    width: 60%;
+    height: 500px;
+    background-color: White;
+}
+
+.add_div {
+    width: 45%;
+    height: 111px;
+    background-color: White;
+    margin-left: 2px;
+}
+
+.add_category {
+    color: Black;
+    position: absolute;
+    width: 20%;
+    height: 70px;
+    float: left;
+}
+
+.add_sup {
+    width: 60%;
+    height: 500px;
+    background-color: White;
+}
+
+.right {
+    text-align: center;
+    float: right;
+    width: 80%;
+    height: 400px;
+    background-color: Black;
+}
+
+.width {
+    width: 150px;
+}
+
+.button {
+    width: 200px;
+    height: 200px;
+    background-color: #1B9AE4;
+    margin: 20 20 20 20;
+    opacity: .9;
+    padding: 15 15 15 15;
+}
+
+.text {
+    font-family: Calibri;
+    font-size: medium;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    color: #FFFFFF;
+    line-height: normal;
+}
+
+.buttonIn {
+    height: 30px;
+    width: 70px;
+    border-style: none;
+    background-color: #1B9AE4;
+    font-family: Calibri;
+    font-size: large;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-transform: none;
+    line-height: normal;
+    vertical-align: middle;
+    word-spacing: normal;
+}
